@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" sizes="any">
+  <title>Pandores Marketplace</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      display: flex;
+      justify-content: center;
+      color: white;
+      padding-bottom: 300px;
+    }
+
+    .main {
+      max-width: 1300px;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+
+    .plugin {
+      color: white;
+      text-decoration: none;
+      width: 320px;
+      margin: 20px;
+      transition: 0.3s ease-in-out;
+      transform: scale(1);
+    }
+
+    .plugin:hover {
+      transform: scale(1.05);
+    }
+
+    .plugin img {
+      border-radius: 20px;
+      filter: drop-shadow(0 0 15px #00000055);
+      background: #1C1C20;
+      border: 2px solid black;
+      overflow: hidden;
+    }
+  </style>
+</head>
+
+<script>
+  const plugins = [
+    {
+      name: "Firebase Features",
+      icon: 'https://media.fab.com/image_previews/gallery_images/186d03a6-34af-469d-8cf9-882bc0debe1d/08dbe2f9-1d4f-4a77-9a89-cb28644be14b.jpg',
+      link: "https://pandoa.github.io/FirebaseFeatures/",
+      color: "#039BE6",
+    },
+    {
+      name: "Ads Pro",
+      icon: 'https://media.fab.com/image_previews/gallery_images/dd11eb9c-0241-40be-9397-30840e2e3ea3/be378d39-2b62-45ae-8c95-fa40fb0da4a4.jpg',
+      link: "https://pandoa.github.io/FirebaseFeatures/",
+      color: "#ff0000"
+    },
+    {
+      name: "PDF Viewer",
+      icon: "https://media.fab.com/image_previews/gallery_images/5cdf3109-67ea-4878-9a97-4a11378bbf55/a89d6815-d602-458d-86dc-3a8e8f270fbd.jpg",
+      link: "https://pandoa.github.io/PDFViewer/",
+    },
+    {
+      name: "SQL Connector",
+      icon: "https://media.fab.com/image_previews/gallery_images/48d1cbe0-a2f6-454c-830f-a8f8ebca244b/4856f387-ceaa-46de-a7c2-66061861673b.jpg",
+      link: "https://pandoa.github.io/DatabaseConnector-ODBC/",
+      color: "",
+    },
+    {
+      name: "WebSocket Server",
+      icon: "https://media.fab.com/image_previews/gallery_images/68824c95-d392-4412-b876-0e89235a2524/029d162d-20f9-4477-add7-20a3579ca356.jpg",
+	  link: "https://pandoa.github.io/WebSocketServer/examples"
+    },
+    {
+      name: "Easy Email",
+      icon: "https://media.fab.com/image_previews/gallery_images/c0a120bb-9c12-432e-9335-4283309da3fb/c5040ae1-c623-492b-b245-08ec48e7ef58.jpg",
+      link: "https://github.com/Pandoa/EasyEmail/blob/master/README.md",
+    },
+    {
+      name: "WebSocket Client",
+      icon: "https://media.fab.com/image_previews/gallery_images/31fae5ff-9b03-43df-9739-01b21c7d40a6/e58efdd7-8fed-4fcc-a75d-447bfa542518.jpg",
+	  link: "https://github.com/Pandoa/BlueprintWebSocket/blob/master/README.md",
+    },
+    {
+      name: "HTTP Server",
+      icon: "https://media.fab.com/image_previews/gallery_images/8ef138c9-7e27-4c9f-8505-880abfe054f3/71a74390-f824-4f92-99d3-ef73c9cbcb5d.jpg",
+	  link: "https://pandoa.github.io/BlueprintHttpServer/",
+    },
+    {
+      name: "iOS Library",
+      icon: "https://media.fab.com/image_previews/gallery_images/7f3d0ff5-5bde-463c-aaeb-f81a9ce41659/2f490c2a-8c8c-4cd6-89a2-7a9ebef19269.jpg",
+	  link: "https://pandoa.github.io/UltimateIOSToolkit/"
+    },
+    {
+      name: "JBI",
+      icon: "https://media.fab.com/image_previews/gallery_images/0e2d63b1-272d-42d8-b2e3-2ff00ce376bb/f1cae24f-0e04-47de-bc26-b2911e2201ec.jpg",
+	  link: "https://pandoa.github.io/JBI/",
+    },
+    {
+      name: "Google Text-to-Speech",
+      icon: "https://media.fab.com/image_previews/gallery_images/39ce8de8-d138-430c-a562-24e8972fc880/9e9475e0-1804-4b28-a492-59064485a841.jpg",
+	  link: "https://pandoa.github.io/GoogleTextToSpeech/",
+    },
+    {
+      name: "ZipIt",
+      icon: "https://media.fab.com/image_previews/gallery_images/691b8ba0-dd88-4675-9199-410dc56421d3/7297ff52-2574-474e-bada-b4026d5b5f7c.jpg",
+	  link: "https://github.com/Pandoa/ZipIt/blob/master/README.md",
+    },
+    {
+      name: "BlueprintHTTP",
+      icon: "https://media.fab.com/image_previews/gallery_images/539508cd-c26d-4cac-874a-63ad0dd89ade/9a61248a-72e6-4866-880d-ba1c4f6e805b.jpg",
+    },
+    {
+      name: "XML",
+      icon: "https://media.fab.com/image_previews/gallery_images/aebb78d6-c5da-4aca-a539-043ae4b87c2a/7b67ea56-8bdc-42e5-a099-69d2d3cb5686.jpg",
+	  link: "https://github.com/Pandoa/BlueprintXML/blob/master/README.md",
+    },
+    {
+      name: "JSON",
+      icon: "https://media.fab.com/image_previews/gallery_images/7d383908-2f62-4abe-a022-0a74bf5b73d3/dbf266c4-0641-4b01-8ae8-0c7ab0ff2133.jpg",
+	  link: "https://github.com/Pandoa/BlueprintJSON/blob/master/README.md",
+    },
+    {
+      name: "Hexasphere",
+      link: "https://pandoa.github.io/HexaSphere/",
+      icon: "https://media.fab.com/image_previews/gallery_images/d68b55a9-1d5b-43ad-b350-80b0df836cf3/91f09998-dfc8-4736-a53b-70f7486e5de9.jpg",
+    },
+    {
+      name: "SecureSocket",
+      icon: "https://media.fab.com/image_previews/gallery_images/708c5be9-250c-4b47-bccb-d6b52cf88d01/df57fe62-a4e9-4fd2-9de8-dbb5645a0fff.jpg",
+	  link: "https://github.com/Pandoa/SecureSocket/blob/master/README.md",
+    },
+    {
+      name: "OAuth2",
+      icon: "https://media.fab.com/image_previews/gallery_images/7a58e658-d63f-4572-8c7f-d41a32998604/b37e5ef6-d8f5-4839-bf43-625c234397b3.jpg",
+      link: "https://pandoa.github.io/mobileauth/",
+    },
+    {
+      name: "Windows Notification",
+      icon: "https://media.fab.com/image_previews/gallery_images/b792b09c-873c-4e3f-8ae5-029fc8ec7853/e7f2223d-e733-4d8e-be16-aa1f292e05ef.jpg",
+	  link: "https://pandoa.github.io/WindowsNotification/",
+    },
+    {
+      name: "OneSignal", 
+      icon: "https://media.fab.com/image_previews/gallery_images/89237c45-c8fa-4cb2-b374-599405a7e92f/b347f1d3-966a-4954-bea3-0402fc5c9cb4.jpg",
+	  link: "https://pandoa.github.io/OneSignal/",
+    },
+    {
+      name: "Cloud Storage",
+      icon: "https://media.fab.com/image_previews/gallery_images/122740d6-6f25-4344-a8a0-c9ec2d4ce51c/e65ff269-e4a6-412d-a432-2826dff472a3.jpg",
+	  link: "https://pandoa.github.io/GoogleCloudStorage/",
+    },
+    {
+      name: "LibArchive",
+      icon: "https://media.fab.com/image_previews/gallery_images/aafee7b7-7f3f-408a-bb30-93df8743953d/c360f4b8-5a37-4c94-8adf-a32fd01c3477.jpg",
+	  link: "https://pandoa.github.io/UCL/",
+    },
+  ];
+</script>
+
+<body style="background: #101014">
+  <div class="main">
+    <h2>
+      Plugins
+    </h2>
+    <div class="container">
+      <script>
+        for (const plugin of plugins) {
+          document.write(`
+<a class="plugin" href="${plugin.link ?? '#'}">
+    <img src="${plugin.icon}" width="320px" height="180px"/>
+</a>`);
+        }  
+      </script>
+    </div>
+  </div>
+</body>
+
+</html>
