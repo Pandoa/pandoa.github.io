@@ -1,4 +1,10 @@
 User-agent: *
 Allow: /
 
+Sitemap: https://pandoa.github.io/sitemapindex.xml
+Sitemap: https://pandoa.github.io/sitemap.xml
 Sitemap: https://pandoa.github.io/FirebaseFeatures/sitemap.xml
+Sitemap: https://pandoa.github.io/PDFViewer/sitemap.xml
+Sitemap: https://pandoa.github.io/HexaSphere/sitemap.xml
+Sitemap: https://pandoa.github.io/GoogleTextToSpeech/sitemap.xml
+Sitemap: https://pandoa.github.io/4dsPro/sitemap.xml
