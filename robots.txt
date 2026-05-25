@@ -8,3 +8,5 @@ Sitemap: https://pandoa.github.io/PDFViewer/sitemap.xml
 Sitemap: https://pandoa.github.io/HexaSphere/sitemap.xml
 Sitemap: https://pandoa.github.io/GoogleTextToSpeech/sitemap.xml
 Sitemap: https://pandoa.github.io/4dsPro/sitemap.xml
+Sitemap: https://pandoa.github.io/BlueprintWebSocket/sitemap.xml
+Sitemap: https://pandoa.github.io/wordito-website/sitemap.xml
